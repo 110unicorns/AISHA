@@ -236,6 +236,152 @@
             text-transform: uppercase;
         }
 
+        .objectives-box h3.playlist-spacer {
+            margin-top: 25px; /* Separación limpia entre listas */
+        }
+
+        /* Lista de objetivos / tracks */
+        .objectives-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .objectives-list li {
+            font-size: 1rem;
+            color: #e0e0e0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+        }
+
+        .objectives-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Puntos verdes personalizados para Ambient (Green_Ice) */
+        .ambient-list li::before {
+            content: "●";
+            color: #2ecc71; /* Verde brillante */
+            display: inline-block;
+            width: 1em;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Puntos rojos personalizados para Latin DJ (Red_Fire) */
+        .latin-list li::before {
+            content: "●";
+            color: #ff3333; /* Rojo fuego */
+            display: inline-block;
+            width: 1em;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Puntos azules/cyan para la Playlist 3 (Blue_Water / Mito) */
+        .third-list li::before {
+            content: "●";
+            color: #3498db; /* Azul cyan limpio */
+            display: inline-block;
+            width: 1em;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Botón verde de acción */
+        .btn {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: #0d1111;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            padding: 12px 35px;
+            border-radius: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #27ae60;
+        }
+
+        /* Pie de página */
+        .footer {
+            color: #556060;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Título Superior -->
+        <div class="main-title">Mi Espacio Creativo - En Construcción</div>
+
+        <!-- Tarjeta Principal -->
+        <div class="card">
+            <h1>Distrito 110 - Audio Network</h1>
+            <p>Sincronización de hilos musicales para el entorno de desarrollo y estados de flujo.</p>
+
+            <div class="objectives-box">
+                <!-- PLAYLIST 1: AMBIENT -->
+                <h3>Hypnotic FlowState</h3>
+                <ul class="objectives-list ambient-list">
+                    <li>Weightless Part 1 — Marconi Union</li>
+                    <li>Interloper — Carbon Based Lifeforms</li>
+                    <li>Sol — Solar Fields</li>
+                </ul>
+
+                <!-- PLAYLIST 2: LATIN DJ -->
+                <h3 class="playlist-spacer">Latin DJ Personal Set</h3>
+                <ul class="objectives-list latin-list">
+                    <li>Gasolina (DJ Santarosa Remix) — Daddy Yankee</li>
+                    <li>Papi Chulo (Dembow Remix) — Lorna</li>
+                    <li>Danza Kuduro (Throwback Mix) — Don Omar</li>
+                </ul>
+
+                <!-- PLAYLIST 3: NUEVA LISTA -->
+                <h3 class="playlist-spacer">Playlist Número Tres</h3>
+                <ul class="objectives-list third-list">
+                    <li>Título del Tema 01 — Artista</li>
+                    <li>Título del Tema 02 — Artista</li>
+                    <li>Título del Tema 03 — Artista</li>
+                </ul>
+            </div>
+
+            <!-- Botón de Acción -->
+            <a href="#" class="btn">Entrar al Chasis</a>
+        </div>
+
+        <!-- Pie de página -->
+        <div class="footer">Distrito 110 © 2026 — Aisha Tech</div>
+    </div>
+
+</body>
+</html>            border-radius: 12px;
+            padding: 25px 30px;
+            max-width: 450px;
+            margin: 0 auto 35px auto;
+            text-align: left;
+        }
+
+        /* Título de la lista */
+        .objectives-box h3 {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
         .objectives-box h3.latin-title {
             margin-top: 25px; /* Separación para la segunda lista */
         }
