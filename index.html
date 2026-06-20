@@ -68,7 +68,7 @@
             margin-right: auto;
         }
 
-        /* Bloque contenedor de la lista de objetivos */
+        /* Bloque contenedor de las listas de reproducción */
         .objectives-box {
             background-color: #0b0e0e;
             border: 1px solid #161d1d;
@@ -79,18 +79,22 @@
             text-align: left;
         }
 
-        /* Título de la lista */
+        /* Título de las secciones musicales */
         .objectives-box h3 {
             font-size: 1.1rem;
             letter-spacing: 1px;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-align: center;
             color: #ffffff;
             text-transform: uppercase;
         }
 
-        /* Lista de objetivos */
+        .objectives-box h3.latin-title {
+            margin-top: 25px; /* Separación entre listas */
+        }
+
+        /* Listas de reproducción */
         .objectives-list {
             list-style: none;
             padding: 0;
@@ -109,10 +113,20 @@
             margin-bottom: 0;
         }
 
-        /* Puntos verdes personalizados de la lista */
-        .objectives-list li::before {
+        /* Playlist 1: Puntos verdes personalizados (Ambient / Green_Ice) */
+        .ambient-list li::before {
             content: "●";
             color: #2ecc71; /* Verde brillante */
+            display: inline-block;
+            width: 1em;
+            margin-right: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Playlist 2: Puntos rojos personalizados (Latin DJ / Red_Fire) */
+        .latin-list li::before {
+            content: "●";
+            color: #ff3333; /* Rojo fuego */
             display: inline-block;
             width: 1em;
             margin-right: 12px;
@@ -151,11 +165,37 @@
 <body>
 
     <div class="wrapper">
-        <!-- Título Superior -->
         <div class="main-title">Mi Espacio Creativo - En Construcción</div>
 
-        <!-- Tarjeta Principal -->
         <div class="card">
+            <h1>Distrito 110 - Audio Network</h1>
+            <p>Sincronización de hilos musicales para el entorno de desarrollo y estados de flujo.</p>
+
+            <div class="objectives-box">
+                
+                <h3>Hypnotic FlowState</h3>
+                <ul class="objectives-list ambient-list">
+                    <li>Weightless Part 1 — Marconi Union</li>
+                    <li>Interloper — Carbon Based Lifeforms</li>
+                    <li>Sol — Solar Fields</li>
+                </ul>
+
+                <h3 class="latin-title">Latin DJ Personal Set</h3>
+                <ul class="objectives-list latin-list">
+                    <li>Despacito (Remix) — Luis Fonsi & Daddy Yankee</li>
+                    <li>Con Calma (Remix) — Daddy Yankee & Katy Perry</li>
+                    <li>Pepas (Tiësto Remix) — Farruko & Tiësto</li>
+                </ul>
+
+            </div>
+
+            <a href="#" class="btn">Entrar al Chasis</a>
+        </div>
+
+        <div class="footer">Distrito 110 © 2026 — Aisha Tech</div>
+    </div>
+
+</body>        <div class="card">
             <h1>¡Hola! Bienvenidos a mi rincón<br>digital experimental.</h1>
             
             <p>Esta es una página sencilla creada desde cero para visualizar el diseño. Aquí iré compartiendo ideas, proyectos y quizás algunos datos experimentales pronto.</p>
