@@ -68,7 +68,7 @@
             margin-right: auto;
         }
 
-        /* Bloque contenedor de las listas de reproducción */
+        /* Bloque contenedor de la lista de objetivos */
         .objectives-box {
             background-color: #0b0e0e;
             border: 1px solid #161d1d;
@@ -79,22 +79,22 @@
             text-align: left;
         }
 
-        /* Título de las secciones musicales */
+        /* Título de la lista */
         .objectives-box h3 {
             font-size: 1.1rem;
             letter-spacing: 1px;
             margin-top: 0;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-align: center;
             color: #ffffff;
             text-transform: uppercase;
         }
 
         .objectives-box h3.latin-title {
-            margin-top: 25px; /* Separación entre listas */
+            margin-top: 25px; /* Separación para la segunda lista */
         }
 
-        /* Listas de reproducción */
+        /* Lista de objetivos / tracks */
         .objectives-list {
             list-style: none;
             padding: 0;
@@ -113,7 +113,7 @@
             margin-bottom: 0;
         }
 
-        /* Playlist 1: Puntos verdes personalizados (Ambient / Green_Ice) */
+        /* Puntos verdes personalizados para Ambient (Green_Ice) */
         .ambient-list li::before {
             content: "●";
             color: #2ecc71; /* Verde brillante */
@@ -123,10 +123,10 @@
             font-size: 0.9rem;
         }
 
-        /* Playlist 2: Puntos rojos personalizados (Latin DJ / Red_Fire) */
+        /* Puntos rojos personalizados para Latin DJ (Red_Fire) */
         .latin-list li::before {
             content: "●";
-            color: #ff3333; /* Rojo fuego */
+            color: #ff3333; /* Rojo */
             display: inline-block;
             width: 1em;
             margin-right: 12px;
@@ -165,14 +165,16 @@
 <body>
 
     <div class="wrapper">
+        <!-- Título Superior -->
         <div class="main-title">Mi Espacio Creativo - En Construcción</div>
 
+        <!-- Tarjeta Principal -->
         <div class="card">
             <h1>Distrito 110 - Audio Network</h1>
             <p>Sincronización de hilos musicales para el entorno de desarrollo y estados de flujo.</p>
 
             <div class="objectives-box">
-                
+                <!-- PLAYLIST 1 (La que ya tenías en tu V2) -->
                 <h3>Hypnotic FlowState</h3>
                 <ul class="objectives-list ambient-list">
                     <li>Weightless Part 1 — Marconi Union</li>
@@ -180,45 +182,21 @@
                     <li>Sol — Solar Fields</li>
                 </ul>
 
+                <!-- PLAYLIST 2 (La nueva de Latin DJ) -->
                 <h3 class="latin-title">Latin DJ Personal Set</h3>
                 <ul class="objectives-list latin-list">
                     <li>Despacito (Remix) — Luis Fonsi & Daddy Yankee</li>
                     <li>Con Calma (Remix) — Daddy Yankee & Katy Perry</li>
                     <li>Pepas (Tiësto Remix) — Farruko & Tiësto</li>
                 </ul>
-
             </div>
 
+            <!-- Botón de Acción -->
             <a href="#" class="btn">Entrar al Chasis</a>
         </div>
 
+        <!-- Pie de página -->
         <div class="footer">Distrito 110 © 2026 — Aisha Tech</div>
-    </div>
-
-</body>        <div class="card">
-            <h1>¡Hola! Bienvenidos a mi rincón<br>digital experimental.</h1>
-            
-            <p>Esta es una página sencilla creada desde cero para visualizar el diseño. Aquí iré compartiendo ideas, proyectos y quizás algunos datos experimentales pronto.</p>
-
-            <!-- Caja de Objetivos -->
-            <div class="objectives-box">
-                <h3>Próximos objetivos:</h3>
-                <ul class="objectives-list">
-                    <li>1. Terminar el primer borrador de HTML.</li>
-                    <li>2. Conectar mi archivo JSON de personajes.</li>
-                    <li>3. Añadir una pequeña galería orgánica.</li>
-                    <li>4. Compartir el enlace final.</li>
-                </ul>
-            </div>
-
-            <!-- Botón -->
-            <button class="btn" onclick="alert('¡Próximamente se cargarán los proyectos!')">Ver mis proyectos</button>
-        </div>
-
-        <!-- Footer -->
-        <div class="footer">
-            © 2026 - Diseñado en Chrome y GitHub - Con la ayuda de Dalila.
-        </div>
     </div>
 
 </body>
