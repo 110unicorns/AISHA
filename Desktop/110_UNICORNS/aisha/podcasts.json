@@ -1,16 +1,31 @@
-Last login: Thu Jun 18 01:39:53 on ttys002
---- BIENVENIDO AL DISTRITO 110: MODO CREATIVO ACTIVADO ---
-DALILA/	J02/	LAIA/	SIBILA/	aisha/
-/Users/usuario/.zshrc:cd:6: no such file or directory: /Users/usuario/Documents/110_UNICORNS
-usuario@Scifii 110_UNICORNS % [
-    {
-        "titulo": "Transmisión 001 - Orígenes del Distrito 110",
-        "fecha": "18-06-2026",
-        "descripcion": "Primer bloque de datos sonoros del ecosistema cyber-organic. Conexión de nodos e inteligencia descentralizada.",
-        "enlace": "https://hiperkubik.net"
+{
+  "playlists": {
+    "mit_triphop": {
+      "nombre": "Classic Trip Hop Set",
+      "cuadrante": "Mito / TripHop",
+      "color": "blue",
+      "tracks": [
+        {"titulo": "Teardrop", "artista": "Massive Attack", "youtube_id": "uV31Z7-V9g0"}
+      ]
+    },
+    "hielo_ambient": {
+      "nombre": "Hypnotic FlowState",
+      "cuadrante": "Hielo / Ambient",
+      "color": "green",
+      "tracks": [
+        {"titulo": "Weightless Part 1", "artista": "Marconi Union", "youtube_id": "UfcAVejsvU4"}
+      ]
+    },
+    "fuego_latin": {
+      "nombre": "Latin DJ Personal Set",
+      "cuadrante": "Fuego / Latin DJ",
+      "color": "red",
+      "tracks": [
+        {"titulo": "Gasolina (Remix)", "artista": "Daddy Yankee", "youtube_id": "qGKrc3ZhEE4"}
+      ]
     }
-]
-
+  }
+}
 
 
 
