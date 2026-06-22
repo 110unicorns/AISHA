@@ -3,133 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aisha DJ | Distrito 110</title>
+    <title>Aisha DJ - Loop Pulls</title>
     <style>
-        :root {
-            --bg-color: #000000;
-            --text-color: #c5c6c7;
-            --main-accent: #66fcf1;
-            --hal-red: #ff1a1a;
-        }
-
+        /* Estética minimalista y oscura para el entorno de Aisha */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 40px 20px;
+            background-color: #0a0a0a;
+            color: #dcdcdc;
+            font-family: 'Courier New', Courier, monospace;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
+            margin: 0;
+            padding: 20px;
         }
 
-        .hal-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 40px;
-            background: linear-gradient(180deg, #151515, #080808);
-            padding: 30px;
-            border-radius: 8px;
-            border: 2px solid #222;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+        header {
             text-align: center;
-        }
-
-        .hal-eye {
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, #ffffff 0%, #ffff00 10%, var(--hal-red) 30%, #660000 70%, #000000 90%);
-            border-radius: 50%;
-            border: 8px solid #333;
-            box-shadow: 0 0 40px rgba(255, 26, 26, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.8);
-            position: relative;
-            margin-bottom: 15px;
+            margin-bottom: 35px;
         }
 
         h1 {
-            color: #ffffff;
-            margin: 10px 0 5px 0;
             font-size: 1.8rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        h1 span {
-            color: var(--main-accent);
-        }
-
-        .subtitle {
-            font-size: 0.9rem;
-            color: #666;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        /* Contenedor simple para los enlaces de música */
-        .links-container {
-            width: 100%;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .music-link {
-            display: block;
-            background-color: #0a0f14;
-            border: 1px solid #11151c;
-            border-radius: 8px;
-            padding: 20px;
-            text-decoration: none;
+            letter-spacing: 6px;
+            margin: 0 0 10px 0;
             color: #ffffff;
-            transition: all 0.3s ease;
+            font-weight: normal;
         }
 
-        .music-link:hover {
-            border-color: var(--main-accent);
-            box-shadow: 0 0 15px rgba(102, 252, 241, 0.2);
-            transform: translateY(-2px);
+        .sub {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            color: #555555;
+            text-transform: uppercase;
         }
 
-        .link-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--main-accent);
-            margin: 0 0 5px 0;
-        }
-
-        .link-desc {
-            font-size: 0.9rem;
-            color: #8f9296;
-            margin: 0;
+        .player-frame {
+            width: 100%;
+            max-width: 700px;
+            background: #111111;
+            border: 1px solid #222222;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            border-radius: 4px;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
 
-    <div class="hal-container">
-        <div class="hal-eye"></div>
-        <h1>Aisha <span>DJ</span></h1>
-        <p class="subtitle">Ecosistema Distrito 110</p>
-    </div>
+    <header>
+        <h1>AISHA // DJ</h1>
+        <div class="sub">Ecosistema 110_UNICORNS — Loop Pulls</div>
+    </header>
 
-    <div class="links-container">
-        
-        <a href="https://soundcloud.com/user-109850132/sets/triphop?si=4f62f8d31a9542a087e8c2e23547d683&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" class="music-link">
-            <div class="link-title">🎵 Trip Hop Ambient Set</div>
-            <p class="link-desc">Sesión inmersiva de Trip Hop y frecuencias ambientales.</p>
-        </a>
-
-        <a href="https://soundcloud.com/fraze1/sets/late-trip-night-hop?si=db7ea0336ca545b8b76d26afce403ee6&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank" class="music-link">
-            <div class="link-title">🌌 Late Night Trip Hop</div>
-            <p class="link-desc">Frecuencias y ritmos nocturnos para sesiones de desarrollo.</p>
-        </a>
-
+    <div class="player-frame">
+        <iframe 
+            width="100%" 
+            height="450" 
+            scrolling="no" 
+            frameborder="no" 
+            allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1495914616&color=%231a1a1a&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+        </iframe>
     </div>
 
 </body>
