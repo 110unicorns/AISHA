@@ -91,7 +91,7 @@
             flex-direction: column;
             gap: 20px;
             width: 100%;
-            max-width: 900px; /* Ajustado para formato panorámico */
+            max-width: 900px;
         }
 
         /* Tarjeta en formato rectángulo horizontal */
@@ -102,8 +102,8 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             border: 1px solid #11151c;
             display: flex;
-            flex-direction: row; /* Alineación horizontal de la imagen y los textos */
-            height: 160px; /* Altura fija para el formato rectángulo */
+            flex-direction: row;
+            height: 160px;
         }
 
         .playlist-card:hover {
@@ -113,7 +113,7 @@
 
         /* Contenedor de la foto de portada */
         .cover-art-container {
-            width: 240px; /* Ancho del rectángulo de la imagen */
+            width: 240px;
             height: 100%;
             position: relative;
             flex-shrink: 0;
@@ -122,7 +122,7 @@
         .cover-art-img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Hace que la foto encaje perfectamente sin deformarse */
+            object-fit: cover;
         }
 
         .quadrant-tag {
@@ -175,7 +175,7 @@
             font-weight: bold;
             font-size: 0.9rem;
             transition: all 0.3s ease;
-            white-space: nowrap; /* Evita que el texto del botón se rompa */
+            white-space: nowrap;
         }
 
         /* Responsivo para pantallas pequeñas */
@@ -202,100 +202,32 @@
 </head>
 <body>
 
-    <!-- Panel Central HAL 9000 // AISHA DJ -->
     <div class="hal-container">
         <div class="hal-eye"></div>
         <h1>Aisha <span>DJ</span></h1>
         <p class="subtitle">Ecosistema Distrito 110</p>
     </div>
 
-    <!-- Contenedor en formato Lista Vertical para los rectángulos -->
     <div class="list-container" id="playlist-grid"></div>
 
     <script>
-        // Estructura con soporte para imágenes de portada de tus listas
+        // Estructura definitiva con tus 4 canales de música operativos
         const playlistData = {
           "playlists": [
             {
               "id": "playlist_001",
-              "title": "Cyberpunk Beats",
+              "title": "Trip Hop Ambient Set",
               "quadrant": "Agua-Azul",
-              "description": "Darksynth, Neon y Retrowave para codear a 60 FPS en el chasis.",
+              "description": "Sesión inmersiva de Trip Hop y frecuencias ambientales para el entorno soberano.",
               "image_url": "https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=600&auto=format&fit=crop", 
               "accent_color": "#66fcf1",
-              "url": "https://soundcloud.com/scifii/sets/cyberpunk-beats"
+              "url": "https://soundcloud.com/user-109850132/sets/triphop?si=4f62f8d31a9542a087e8c2e23547d683&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
             },
             {
               "id": "playlist_002",
-              "title": "Frecuencias Mito",
+              "title": "Late Night Trip Hop",
               "quadrant": "Agua-Azul",
-              "description": "Ambientes relajantes, música orgánica, fractales y pasajes acústicos.",
-              "image_url": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=600&auto=format&fit=crop",
+              "description": "Frecuencias y ritmos nocturnos para sesiones prolongadas de desarrollo.",
+              "image_url": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=600&auto=format&fit=crop",
               "accent_color": "#66fcf1",
-              "url": "https://soundcloud.com/scifii/sets/frecuencias-mito"
-            },
-            {
-              "id": "playlist_003",
-              "title": "Fuego Puro",
-              "quadrant": "Agua-Azul",
-              "description": "Ritmos intensos, guitarras pesadas, impulsos Tesla y pura energía.",
-              "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop",
-              "accent_color": "#66fcf1",
-              "url": "https://soundcloud.com/scifii/sets/fuego-puro"
-            },
-            {
-              "id": "playlist_004",
-              "title": "Latin DJ Personal Set",
-              "quadrant": "Agua-Azul",
-              "description": "Set personal de mezcla (110-130 BPM). Incluye tracks de Farruko, Tiësto y Daddy Yankee.",
-              "image_url": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop",
-              "accent_color": "#66fcf1",
-              "url": "https://music.youtube.com/playlist?list=PLfH6E8CyLWtyZtkoOu73T2RNcVSTmFRGx"
-            }
-          ]
-        };
-
-        function renderPlaylists() {
-            const grid = document.getElementById('playlist-grid');
-            if (!grid) return;
-            grid.innerHTML = '';
-
-            playlistData.playlists.forEach(playlist => {
-                const card = document.createElement('div');
-                card.className = 'playlist-card';
-                
-                card.addEventListener('mouseenter', () => {
-                    card.style.borderColor = playlist.accent_color;
-                    card.style.boxShadow = `0 10px 20px ${playlist.accent_color}1e`;
-                });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.borderColor = 'transparent';
-                    card.style.boxShadow = 'none';
-                });
-
-                card.innerHTML = `
-                    <div class="cover-art-container">
-                        <span class="quadrant-tag" style="color: ${playlist.accent_color}; border-color: ${playlist.accent_color}44;">
-                            ${playlist.quadrant}
-                        </span>
-                        <img class="cover-art-img" src="${playlist.image_url}" alt="${playlist.title}">
-                    </div>
-                    <div class="playlist-info">
-                        <div class="text-group">
-                            <h3 class="playlist-title">${playlist.title}</h3>
-                            <p class="playlist-desc">${playlist.description}</p>
-                        </div>
-                        <a href="${playlist.url}" target="_blank" class="btn-open" style="color: ${playlist.accent_color}; border: 2px solid ${playlist.accent_color};">
-                            Abrir Canal
-                        </a>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', renderPlaylists);
-    </script>
-</body>
-</html>
+              "url": "
