@@ -6,11 +6,11 @@
     <title>Aisha DJ | Distrito 110</title>
     <style>
         :root {
-            --bg-color: #000000;
-            --card-bg: #0a0f14;
+            --bg-color: #000000; /* Fondo negro absoluto */
+            --card-bg: #0a0f14;   /* Tarjetas oscuras ciber-orgánicas */
             --text-color: #c5c6c7;
-            --main-accent: #66fcf1;
-            --hal-red: #ff1a1a;
+            --main-accent: #66fcf1; /* Azul Cyberpunk */
+            --hal-red: #ff1a1a;     /* El ojo de HAL 9000 */
         }
 
         body {
@@ -25,6 +25,7 @@
             min-height: 100vh;
         }
 
+        /* Contenedor de la interfaz de HAL 9000 */
         .hal-container {
             display: flex;
             flex-direction: column;
@@ -37,6 +38,7 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
         }
 
+        /* El ojo físico de HAL 9000 en CSS Puro */
         .hal-eye {
             width: 100px;
             height: 100px;
@@ -48,6 +50,7 @@
             margin-bottom: 15px;
         }
 
+        /* Reflejo de cristal de la lente */
         .hal-eye::after {
             content: '';
             position: absolute;
@@ -83,6 +86,7 @@
             margin: 0;
         }
 
+        /* Grid de reproducción de Playlists */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -177,7 +181,7 @@
     <div class="grid-container" id="playlist-grid"></div>
 
     <script>
-        // Todo unificado aquí dentro para evitar fallos de carga en GitHub Pages
+        // Estructura integrada con tus 4 enlaces de música reales
         const playlistData = {
           "playlists": [
             {
@@ -187,7 +191,7 @@
               "description": "Darksynth, Neon y Retrowave para codear a 60 FPS en el chasis.",
               "icon": "🎵",
               "accent_color": "#66fcf1",
-              "url": "#"
+              "url": "https://soundcloud.com/scifii/sets/cyberpunk-beats"
             },
             {
               "id": "playlist_002",
@@ -196,7 +200,7 @@
               "description": "Ambientes relajantes, música orgánica, fractales y pasajes acústicos.",
               "icon": "🌲",
               "accent_color": "#66fcf1",
-              "url": "#"
+              "url": "https://soundcloud.com/scifii/sets/frecuencias-mito"
             },
             {
               "id": "playlist_003",
@@ -205,7 +209,7 @@
               "description": "Ritmos intensos, guitarras pesadas, impulsos Tesla y pura energía.",
               "icon": "🔥",
               "accent_color": "#66fcf1",
-              "url": "#"
+              "url": "https://soundcloud.com/scifii/sets/fuego-puro"
             },
             {
               "id": "playlist_004",
@@ -219,6 +223,7 @@
           ]
         };
 
+        // Renderizador autónomo
         function renderPlaylists() {
             const grid = document.getElementById('playlist-grid');
             if (!grid) return;
