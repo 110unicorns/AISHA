@@ -230,4 +230,61 @@
               "description": "Frecuencias y ritmos nocturnos para sesiones prolongadas de desarrollo.",
               "image_url": "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?q=80&w=600&auto=format&fit=crop",
               "accent_color": "#66fcf1",
-              "url": "
+              "url": "https://soundcloud.com/fraze1/sets/late-trip-night-hop?si=db7ea0336ca545b8b76d26afce403ee6&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+            },
+            {
+              "id": "playlist_003",
+              "title": "Latin DJ Personal Set",
+              "quadrant": "Agua-Azul",
+              "description": "Set personal de mezcla (110-130 BPM). Incluye tracks de Farruko, Tiësto y Daddy Yankee.",
+              "image_url": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop",
+              "accent_color": "#66fcf1",
+              "url": "https://music.youtube.com/playlist?list=PLfH6E8CyLWtyZtkoOu73T2RNcVSTmFRGx"
+            }
+          ]
+        };
+
+        function renderPlaylists() {
+            const grid = document.getElementById('playlist-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            playlistData.playlists.forEach(playlist => {
+                const card = document.createElement('div');
+                card.className = 'playlist-card';
+                
+                card.addEventListener('mouseenter', () => {
+                    card.style.borderColor = playlist.accent_color;
+                    card.style.boxShadow = `0 10px 20px ${playlist.accent_color}1e`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.borderColor = 'transparent';
+                    card.style.boxShadow = 'none';
+                });
+
+                card.innerHTML = `
+                    <div class="cover-art-container">
+                        <span class="quadrant-tag" style="color: ${playlist.accent_color}; border-color: ${playlist.accent_color}44;">
+                            ${playlist.quadrant}
+                        </span>
+                        <img class="cover-art-img" src="${playlist.image_url}" alt="${playlist.title}">
+                    </div>
+                    <div class="playlist-info">
+                        <div class="text-group">
+                            <h3 class="playlist-title">${playlist.title}</h3>
+                            <p class="playlist-desc">${playlist.description}</p>
+                        </div>
+                        <a href="${playlist.url}" target="_blank" class="btn-open" style="color: ${playlist.accent_color}; border: 2px solid ${playlist.accent_color};">
+                            Abrir Canal
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderPlaylists);
+    </script>
+</body>
+</html>
