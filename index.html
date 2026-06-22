@@ -6,11 +6,11 @@
     <title>Aisha DJ | Distrito 110</title>
     <style>
         :root {
-            --bg-color: #000000; /* Fondo negro absoluto */
-            --card-bg: #0a0f14;   /* Tarjetas oscuras ciber-orgánicas */
+            --bg-color: #000000;
+            --card-bg: #0a0f14;
             --text-color: #c5c6c7;
-            --main-accent: #66fcf1; /* Azul Cyberpunk */
-            --hal-red: #ff1a1a;     /* El ojo de HAL 9000 */
+            --main-accent: #66fcf1;
+            --hal-red: #ff1a1a;
         }
 
         body {
@@ -25,7 +25,6 @@
             min-height: 100vh;
         }
 
-        /* Contenedor de la interfaz de HAL 9000 */
         .hal-container {
             display: flex;
             flex-direction: column;
@@ -38,25 +37,17 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
         }
 
-        /* El ojo físico de HAL 9000 en CSS Puro */
         .hal-eye {
             width: 100px;
             height: 100px;
-            background: radial-gradient(circle, 
-                #ffffff 0%, 
-                #ffff00 10%, 
-                var(--hal-red) 30%, 
-                #660000 70%, 
-                #000000 90%);
+            background: radial-gradient(circle, #ffffff 0%, #ffff00 10%, var(--hal-red) 30%, #660000 70%, #000000 90%);
             border-radius: 50%;
             border: 8px solid #333;
-            box-shadow: 0 0 40px rgba(255, 26, 26, 0.8), 
-                        inset 0 0 15px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 40px rgba(255, 26, 26, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.8);
             position: relative;
             margin-bottom: 15px;
         }
 
-        /* Reflejo de cristal de la lente */
         .hal-eye::after {
             content: '';
             position: absolute;
@@ -92,7 +83,6 @@
             margin: 0;
         }
 
-        /* Grid de reproducción de Playlists */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -186,6 +176,90 @@
 
     <div class="grid-container" id="playlist-grid"></div>
 
-    <script src="https://scifii.github.io/playlists/script.js"></script>
+    <script>
+        // Todo unificado aquí dentro para evitar fallos de carga en GitHub Pages
+        const playlistData = {
+          "playlists": [
+            {
+              "id": "playlist_001",
+              "title": "Cyberpunk Beats",
+              "quadrant": "Agua-Azul",
+              "description": "Darksynth, Neon y Retrowave para codear a 60 FPS en el chasis.",
+              "icon": "🎵",
+              "accent_color": "#66fcf1",
+              "url": "#"
+            },
+            {
+              "id": "playlist_002",
+              "title": "Frecuencias Mito",
+              "quadrant": "Agua-Azul",
+              "description": "Ambientes relajantes, música orgánica, fractales y pasajes acústicos.",
+              "icon": "🌲",
+              "accent_color": "#66fcf1",
+              "url": "#"
+            },
+            {
+              "id": "playlist_003",
+              "title": "Fuego Puro",
+              "quadrant": "Agua-Azul",
+              "description": "Ritmos intensos, guitarras pesadas, impulsos Tesla y pura energía.",
+              "icon": "🔥",
+              "accent_color": "#66fcf1",
+              "url": "#"
+            },
+            {
+              "id": "playlist_004",
+              "title": "Latin DJ Personal Set",
+              "quadrant": "Agua-Azul",
+              "description": "Set personal de mezcla (110-130 BPM). Incluye tracks de Farruko, Tiësto y Daddy Yankee.",
+              "icon": "🎛️",
+              "accent_color": "#66fcf1",
+              "url": "https://music.youtube.com/playlist?list=PLfH6E8CyLWtyZtkoOu73T2RNcVSTmFRGx"
+            }
+          ]
+        };
+
+        function renderPlaylists() {
+            const grid = document.getElementById('playlist-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            playlistData.playlists.forEach(playlist => {
+                const card = document.createElement('div');
+                card.className = 'playlist-card';
+                
+                card.addEventListener('mouseenter', () => {
+                    card.style.borderColor = playlist.accent_color;
+                    card.style.boxShadow = `0 10px 20px ${playlist.accent_color}1e`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.borderColor = 'transparent';
+                    card.style.boxShadow = 'none';
+                });
+
+                card.innerHTML = `
+                    <div class="cover-art">
+                        <span class="quadrant-tag" style="color: ${playlist.accent_color}; border-color: ${playlist.accent_color}44;">
+                            ${playlist.quadrant}
+                        </span>
+                        ${playlist.icon}
+                    </div>
+                    <div class="playlist-info">
+                        <div>
+                            <h3 class="playlist-title">${playlist.title}</h3>
+                            <p class="playlist-desc">${playlist.description}</p>
+                        </div>
+                        <a href="${playlist.url}" target="_blank" class="btn-open" style="color: ${playlist.accent_color}; border: 2px solid ${playlist.accent_color};">
+                            Abrir Canal
+                        </a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', renderPlaylists);
+    </script>
 </body>
 </html>
